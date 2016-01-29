@@ -1,0 +1,201 @@
+//string[] Area = new string[] {
+        //    "Агинский-Бурятский-автономный-округ",
+        //    "Алтайский-край",
+        //    "Амурская-область",
+        //    "Архангельская-область",
+        //    "Астраханская-область",
+        //    "Белгородская-область",
+        //    "Брестская-область",
+        //    "Брянская-область",
+        //    "Владимирская-область",
+        //    "Волгоградская-область",
+        //    "Вологодская-область",
+        //    "Воронежская-область",
+        //    "г-Москва",
+        //    "г-Санкт-Петербург",
+        //    "г-Севастополь",
+        //    "Еврейская-автономная-область",
+        //    "Ивановская-область",
+        //    "Иркутская-область",
+        //    "Кабардино-Балкарская-Республика",
+        //    "Калининградская-область",
+        //    "Калужская-область",
+        //    "Карачаево-Черкесская-Республика",
+        //    "Кемеровская-область",
+        //    "Кировская-область",
+        //    "Костромская-область",
+        //    "Краснодарский-край",
+        //    "Красноярский-край",
+        //    "Курганская-область",
+        //    "Курская-область",
+        //    "Ленинградская-область",
+        //    "Липецкая-область",
+        //    "Московская-область",
+        //    "Мурманская-область",
+        //    "Нижегородская-область",
+        //    "Новгородская-область",
+        //    "Новосибирская-область",
+        //    "Омская-область",
+        //    "Оренбургская-область",
+        //    "Орловская-область",
+        //    "Пензенская-область",
+        //    "Пермская-область",
+        //    "Приморский-край",
+        //    "Псковская-область",
+        //    "Республика-Адыгея",
+        //    "Республика-Башкортостан",
+        //    "Республика-Бурятия",
+        //    "Республика-Дагестан",
+        //    "Республика-Ингушетия",
+        //    "Республика-Калмыкия",
+        //    "Республика-Карелия",
+        //    "Республика-Коми",
+        //    "Республика-Крым",
+        //    "Республика-Марий-Эл",
+        //    "Республика-Мордовия",
+        //    "Республика-Саха-(Якутия)",
+        //    "Республика-Северная-Осетия-Алания",
+        //    "Республика-Татарстан",
+        //    "Республика-Хакасия",
+        //    "Ростовская-область",
+        //    "Рязанская-область",
+        //    "Самарская-область",
+        //    "Саратовская-область",
+        //    "Сахалинская-область",
+        //    "Свердловская-область",
+        //    "Смоленская-область",
+        //    "Ставропольский-край",
+        //    "Тамбовская-область",
+        //    "Тверская-область",
+        //    "Томская-область",
+        //    "Тульская-область",
+        //    "Тюменская-область",
+        //    "Удмуртская-Республика",
+        //    "Ульяновская-область",
+        //    "Усть-Ордынский-Бурятский-автономный-округ",
+        //    "Хабаровский-край",
+        //    "Ханты-Мансийский-автономный-округ",
+        //    "Челябинская-область",
+        //    "Чеченская-Республика",
+        //    "Читинская-область",
+        //    "Чувашская-Республика-Чаваш-Республики",
+        //    "Ямало-Ненецкий-автономный-округ",
+        //    "Ярославская-область"
+        //};
+
+
+        //-------------------------------------------------
+        //для сайта ждстанция.рф
+        //string page = "ждстанция.рф";
+
+        //IdnMapping mapping = new IdnMapping();
+        //string asciiIdnPage = mapping.GetAscii(page);
+        //Console.WriteLine(asciiIdnPage);
+
+        //asciiIdnPage += '/';
+        //var text = GetEncodingPage("http://" + asciiIdnPage);
+
+        //foreach (string iArea in Area)
+        //{
+        //    string pageDefault = asciiIdnPage;
+        //    pageDefault += iArea;
+        //    pageDefault += '/';
+
+        //    text = GetEncodingPage("http://" + pageDefault);
+        //    Console.WriteLine(text);
+
+        //    Regex pattern = new Regex("<strong.*?>(.*?)<\\/strong>");
+
+        //    foreach (Match m in pattern.Matches(text))
+        //    {
+        //        string pageArea = pageDefault;
+        //        if (m.Success)
+        //        {
+        //            string code = m.Groups[1].Value;
+
+        //            if (code != " <strong>&#8594;")
+        //            {
+        //                pageArea += code;
+        //                pageArea += '/';
+
+        //                var newtext = string.Empty;
+        //                try
+        //                {
+        //                    newtext = GetEncodingPage("http://" + pageArea);
+        //                }
+        //                catch (WebException ex)
+        //                {
+        //                    continue;
+        //                }
+
+        //                string info = string.Empty;
+
+        //                var patternCode = new Regex("<p>(?<number>[0-9]{6})");
+        //                var matchCodeCode = patternCode.Match(newtext);
+        //                if (matchCodeCode.Success)
+        //                {
+        //                    var CoordValue = matchCodeCode.Groups["number"].Value;
+
+        //                    info += CoordValue;
+
+        //                    var patternCoordinate = new Regex(@"<p>(?<number>[0-9]+\.[0-9]+)");
+
+        //                    var latitude = string.Empty;
+        //                    var longitude = string.Empty;
+        //                    foreach (Match mCoord in patternCoordinate.Matches(newtext))
+        //                    {
+        //                        if (mCoord.Success)
+        //                        {
+        //                            if (longitude == string.Empty)
+        //                            {
+        //                                longitude = mCoord.Groups["number"].Value;
+        //                            }
+        //                            else
+        //                            {
+        //                                latitude = mCoord.Groups["number"].Value;
+        //                            }
+                                   
+        //                        }
+        //                    }
+
+        //                    info += ',';
+        //                    info += latitude;
+        //                    info += ',';
+        //                    info += longitude;
+        //                    info += '\n';
+
+        //                    Console.WriteLine(info);
+        //                    Coordinates_WriteFile(fileOutNodeCsvStation, info.ToString());
+        //                }
+
+                        
+
+        //            }
+
+
+        //        }
+        //    }
+
+
+
+        //    Console.WriteLine(page);
+
+        //    string HtmlText = string.Empty, Coordinates = string.Empty;
+
+        //    try
+        //    {
+        //        HtmlText = GetEncodingPage("http://" + asciiIdnPage);
+        //    }
+        //    catch (WebException ex)
+        //    {
+        //        using (var stream = ex.Response.GetResponseStream())
+        //        using (var reader = new StreamReader(stream))
+        //        {
+        //            Console.WriteLine(reader.ReadToEnd());
+        //        }
+        //        //continue;
+        //    }
+
+        //    List<string> links = getMatches(HtmlText);
+
+        //}
